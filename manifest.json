@@ -1,0 +1,13 @@
+{
+  "manifest_version": 3,
+  "name": "Domain-Based Music Generator",
+  "version": "1.0",
+  "description": "Generates music based on the website's domain.",
+  "permissions": ["activeTab"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  }
+}
