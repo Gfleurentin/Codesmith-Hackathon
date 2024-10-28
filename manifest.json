@@ -1,13 +1,10 @@
 {
   "manifest_version": 3,
-  "name": "Domain-Based Music Generator",
+  "name": "Mood-Based Music Generator",
   "version": "1.0",
-  "description": "Generates music based on the website's domain.",
-  "permissions": ["activeTab"],
-  "background": {
-    "service_worker": "background.js"
-  },
+  "description": "Suggests music playlists based on the user's selected mood.",
   "action": {
-    "default_popup": "popup.html"
-  }
+    "default_popup": "index.html"
+  },
+  "permissions": []
 }
