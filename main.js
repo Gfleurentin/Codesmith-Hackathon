@@ -59,24 +59,24 @@ const moodPlaylist = {
   focused: "https://open.spotify.com/playlist/37i9dQZF1EIeSTCg9cy53h",
 };
 
-document.getElementById("happy").addEventListener("click", function () {
-  suggestPlaylist("happy");
-});
-document.getElementById("sad").addEventListener("click", function () {
-  suggestPlaylist("sad");
-});
-document.getElementById("energetic").addEventListener("click", function () {
-  suggestPlaylist("energetic");
-});
-document.getElementById("calm").addEventListener("click", function () {
-  suggestPlaylist("calm");
-});
-document.getElementById("romantic").addEventListener("click", function () {
-  suggestPlaylist("romantic");
-});
-document.getElementById("focused").addEventListener("click", function () {
-  suggestPlaylist("focused");
-});
+// document.getElementById("happy").addEventListener("click", function () {
+//   suggestPlaylist("happy");
+// });
+// document.getElementById("sad").addEventListener("click", function () {
+//   suggestPlaylist("sad");
+// });
+// document.getElementById("energetic").addEventListener("click", function () {
+//   suggestPlaylist("energetic");
+// });
+// document.getElementById("calm").addEventListener("click", function () {
+//   suggestPlaylist("calm");
+// });
+// document.getElementById("romantic").addEventListener("click", function () {
+//   suggestPlaylist("romantic");
+// });
+// document.getElementById("focused").addEventListener("click", function () {
+//   suggestPlaylist("focused");
+// });
 // const generatePlaylist = (mood) => {
 //   const display = document.getElementById("playlist-display");
 //   display.innerHTML = `<h2>${
@@ -97,16 +97,28 @@ document.getElementById("focused").addEventListener("click", function () {
 // };
 
 // Function to suggest the playlist based on the selected mood
-function suggestPlaylist(mood) {
-  const playlistURL = moodPlaylist[mood]; // Get the playlist URL from the object
+// function suggestPlaylist(mood) {
+//   const playlistURL = moodPlaylist[mood]; // Get the playlist URL from the object
 
-  if (playlistURL) {
-    document.getElementById("playlist-display").innerHTML = `
-      <h4>${mood.charAt(0).toUpperCase() + mood.slice(1)} Playlist</h4>
-      <a href="${playlistURL}" target="_blank">Listen on Spotify</a>
-    `;
+//   if (playlistURL) {
+//     document.getElementById("playlist-display").innerHTML = `
+//       <h4>${mood.charAt(0).toUpperCase() + mood.slice(1)} Playlist</h4>
+//       <a href="${playlistURL}" target="_blank">Listen on Spotify</a>
+//     `;
+//   } else {
+//     document.getElementById("playlist-display").innerHTML =
+//       "No playlist available for this mood.";
+//   }
+// }
+// Function to open YouTube playlist in a new tab
+const suggestPlaylist = (mood) => {
+  // Get the URL for the selected mood
+  const playlistUrl = moodPlaylist[mood];
+
+  // If the URL exists, open it in a new tab
+  if (playlistUrl) {
+    window.open(playlistUrl, "_blank"); // Opens the link in a new tab
   } else {
-    document.getElementById("playlist-display").innerHTML =
-      "No playlist available for this mood.";
+    console.log("Playlist not found for mood:", mood);
   }
-}
+};
