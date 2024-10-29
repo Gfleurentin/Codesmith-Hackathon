@@ -1,6 +1,5 @@
 body {
   font-family: "Rubik Wet Paint", system-ui;
-  font-weight: 400px;
   font-style: normal;
   text-align: center;
   margin: 0;
@@ -11,25 +10,36 @@ body {
     rgba(253, 29, 29, 1) 68%,
     rgba(252, 176, 69, 1) 93%
   );
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
 h1 {
   display: inline-block;
   font-size: 2.5em;
   font-weight: bold;
-  /* background: linear-gradient(90deg, #ffd700, #ff8c00, #ffd700); */
-  background: linear-gradient(90deg, #ff7e5f, #feb47b);
+  background: linear-gradient(90deg, #ffd700, #ff8c00, #ffd700);
 
-  -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-stroke: 1px #d6189d;
   /* color: #333333ac; */
-  /* text-shadow: 2px 2px #bbb, 4px 4px #aaa, 6px 6px #999, 8px 8px #888; */
-  color: #fff;
-  text-shadow: 0 0 5px #fff, 0 0 10px #ff00ff, 0 0 15px #ff00ff;
+  text-shadow: 2px 2px #bbb, 4px 4px #aaa, 6px 6px #999, 8px 8px #888;
+  color: #3a0213;
+  text-shadow: 0 0 5px #fff, 0 0 10px #b8ee06, 0 0 15px #ff00ff;
+  /* background-size: 200% 100%; */
+  animation: distort 3s infinite ease-in-out;
   animation: flicker 2s infinite alternate;
-  background-size: 200% 100%;
   animation: shimmer 3s infinite linear;
   animation: wave 1.5s infinite ease-in-out;
+}
+@keyframes distort {
+  0%,
+  100% {
+    transform: skew(0deg);
+  }
+  50% {
+    transform: skew(10deg);
+  }
 }
 @keyframes flicker {
   0% {
@@ -65,7 +75,10 @@ h1 {
 }
 
 #mood {
-  margin: 90px;
+  margin: 100px;
+  margin-left: 100px;
+  margin-right: 100px;
+  padding: auto;
 }
 
 button {
@@ -83,10 +96,11 @@ button {
 button:hover {
   background-color: #f54dac;
   animation: spin 0.5s ease-in;
-  font-size: 2.5em;
-  color: #39ff14;
+  font-size: 2em;
+  color: orange;
   text-shadow: 0 0 5px #39ff14, 0 0 10px #39ff14, 0 0 20px #39ff14,
     0 0 40px #39ff14;
+  background: #3a0213;
 }
 
 @keyframes spin {
@@ -96,25 +110,4 @@ button:hover {
   100% {
     transform: rotate(360deg);
   }
-}
-
-#music-display {
-  margin-top: auto;
-}
-
-#music-display h2 {
-  color: #333;
-  font-size: 24px;
-}
-
-#music-display div {
-  margin: auto;
-  padding: auto;
-  border: 20px solid #ddd;
-  border-radius: 5px;
-  background-color: #fff;
-}
-
-audio {
-  margin-top: 15px;
 }
