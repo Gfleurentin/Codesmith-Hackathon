@@ -1,6 +1,6 @@
 body {
   font-family: "Rubik Wet Paint", system-ui;
-  font-weight: 400;
+  font-weight: 400px;
   font-style: normal;
   text-align: center;
   margin: 0;
@@ -14,18 +14,64 @@ body {
 }
 
 h1 {
-  color: #062182a2;
-  margin-top: 20px;
+  display: inline-block;
+  font-size: 2.5em;
+  font-weight: bold;
+  /* background: linear-gradient(90deg, #ffd700, #ff8c00, #ffd700); */
+  background: linear-gradient(90deg, #ff7e5f, #feb47b);
+
+  -webkit-background-clip: text;
+  -webkit-text-stroke: 1px #d6189d;
+  /* color: #333333ac; */
+  /* text-shadow: 2px 2px #bbb, 4px 4px #aaa, 6px 6px #999, 8px 8px #888; */
+  color: #fff;
+  text-shadow: 0 0 5px #fff, 0 0 10px #ff00ff, 0 0 15px #ff00ff;
+  animation: flicker 2s infinite alternate;
+  background-size: 200% 100%;
+  animation: shimmer 3s infinite linear;
+  animation: wave 1.5s infinite ease-in-out;
+}
+@keyframes flicker {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  90% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes wave {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
 #mood {
-  margin: 80px;
+  margin: 90px;
 }
 
 button {
   margin: 5px;
   padding: 10px 20px;
-  font-size: 16px;
+  font-size: 15px;
   font-family: "Rubik Wet Paint", system-ui;
   border: none;
   background-color: rgb(196, 102, 240);
@@ -33,6 +79,16 @@ button {
   border-radius: 5px;
   cursor: pointer;
 }
+
+button:hover {
+  background-color: #f54dac;
+  animation: spin 0.5s ease-in;
+  font-size: 2.5em;
+  color: #39ff14;
+  text-shadow: 0 0 5px #39ff14, 0 0 10px #39ff14, 0 0 20px #39ff14,
+    0 0 40px #39ff14;
+}
+
 @keyframes spin {
   0% {
     transform: rotate(0deg);
@@ -42,13 +98,8 @@ button {
   }
 }
 
-button:hover {
-  background-color: #f54dac;
-  animation: spin 0.5s ease-in-out;
-}
-
 #music-display {
-  margin-top: 20px;
+  margin-top: auto;
 }
 
 #music-display h2 {
@@ -65,22 +116,5 @@ button:hover {
 }
 
 audio {
-  margin-top: 5px;
-}
-@keyframes pulse {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.1);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-
-.mood-icon {
-  display: inline-block;
-  margin-right: 8px;
-  animation: pulse 0.6s infinite;
+  margin-top: 15px;
 }

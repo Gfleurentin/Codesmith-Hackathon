@@ -20,12 +20,10 @@ const suggestPlaylist = (mood) => {
   }
 };
 
-// document.getElementById("happy").addEventListener("click", function () {
-//   suggestPlaylist("happy");
-// });
-document.getElementById("happy").addEventListener("mouseenter", () => {
-  document.getElementById("happy-audio").play();
+document.getElementById("happy").addEventListener("click", function () {
+  suggestPlaylist("happy");
 });
+
 document.getElementById("sad").addEventListener("click", function () {
   suggestPlaylist("sad");
 });
