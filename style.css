@@ -20,7 +20,7 @@ h1 {
   font-weight: bold;
   background: linear-gradient(90deg, #ffd700, #ff8c00, #ffd700);
 
-  background-clip: text;
+  -webkit-background-clip: text;
   -webkit-text-stroke: 1px #d6189d;
   /* color: #333333ac; */
   text-shadow: 2px 2px #bbb, 4px 4px #aaa, 6px 6px #999, 8px 8px #888;
@@ -98,8 +98,8 @@ button:hover {
   animation: spin 0.5s ease-in;
   font-size: 2em;
   color: orange;
-  text-shadow: 0 0 5px #39ff14, 0 0 10px #39ff14, 0 0 20px #39ff14,
-    0 0 40px #39ff14;
+  text-shadow: 0 0 5px #3714ff, 0 0 10px #5c51a2, 0 0 20px #26987a,
+    0 0 40px #ff1414;
   background: #3a0213;
 }
 

@@ -64,12 +64,20 @@ function setRandomGradientBackground() {
   // Apply the same gradient as the hover effect for buttons
   const style = document.createElement("style");
   style.innerHTML = `
-       button:hover {
-           background: ${randomGradient};
-           color: white;
-           transition: background 0.3s ease;
-       }
-   `;
+        button:hover {
+            background: ${randomGradient};
+            color: white;
+            transition: background 0.3s ease;
+        }
+        
+        /* Apply gradient text effect to the h1 element */
+        h1 {
+            background: ${randomGradient};
+            -webkit-background-clip: text;
+            color: transparent;
+            background-clip: text;
+        }
+    `;
   document.head.appendChild(style);
 }
 
