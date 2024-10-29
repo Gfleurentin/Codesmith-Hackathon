@@ -1,33 +1,50 @@
 body {
-  font-family: Arial, sans-serif;
+  font-family: "Rubik Wet Paint", system-ui;
+  font-weight: 400;
+  font-style: normal;
   text-align: center;
   margin: 0;
   padding: 0;
-  background-color: #f5f5f5;
+  background: radial-gradient(
+    circle,
+    rgba(131, 58, 180, 1) 35%,
+    rgba(253, 29, 29, 1) 68%,
+    rgba(252, 176, 69, 1) 93%
+  );
 }
 
 h1 {
-  color: #333;
+  color: #062182a2;
   margin-top: 20px;
 }
 
-#moods {
-  margin: 20px;
+#mood {
+  margin: 80px;
 }
 
 button {
   margin: 5px;
   padding: 10px 20px;
   font-size: 16px;
+  font-family: "Rubik Wet Paint", system-ui;
   border: none;
-  background-color: #6200ea;
+  background-color: rgb(196, 102, 240);
   color: white;
   border-radius: 5px;
   cursor: pointer;
 }
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 
 button:hover {
-  background-color: #3700b3;
+  background-color: #f54dac;
+  animation: spin 0.5s ease-in-out;
 }
 
 #music-display {
@@ -40,13 +57,30 @@ button:hover {
 }
 
 #music-display div {
-  margin: 10px 0;
-  padding: 10px;
-  border: 1px solid #ddd;
+  margin: auto;
+  padding: auto;
+  border: 20px solid #ddd;
   border-radius: 5px;
   background-color: #fff;
 }
 
 audio {
   margin-top: 5px;
+}
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.mood-icon {
+  display: inline-block;
+  margin-right: 8px;
+  animation: pulse 0.6s infinite;
 }

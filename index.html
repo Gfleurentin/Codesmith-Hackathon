@@ -1,22 +1,25 @@
 <!DOCTYPE html>
-<html>
-  <!DOCTYPE html>
   <html lang="en">
     <head>
       <meta charset="UTF-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <title>Mood-based</title>
       <link rel="stylesheet" href="style.css" />
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Kablammo&family=Rubik+Wet+Paint&display=swap" rel="stylesheet">
     </head>
     <body>
       <h1>How are you feeling ?</h1>
       <div id="mood">
-        <button onclick="suggestPlaylist('happy')">Happy</button>
-        <button onclick="suggestPlaylist('sad')">Sad</button>
-        <button onclick="suggestPlaylist('energetic')">Energetic</button>
-        <button onclick="suggestPlaylist('calm')">Calm</button>
-        <button onclick="suggestPlaylist('romantic')">Romantic</button>
-        <button onclick="suggestPlaylist('focused')">Focused</button>
+        <!-- <button id="happy">Happy</button> -->
+        <button id="happy" onclick="suggestPlaylist('happy')">Happy</button>
+<audio id="happy-audio" src="path_to_happy_audio_clip.mp3"></audio>
+        <button id="sad">Sad</button>
+        <button id="energetic">Energetic</button>
+        <button id="calm">Calm</button>
+        <button id="romantic">Romantic</button>
+        <button id="focused">Focused</button>
       </div>
       <div id="playlist-display"></div>
 
